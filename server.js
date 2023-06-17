@@ -9,9 +9,9 @@ const app = express();
 connectDB();
 
 // Init middleware
-app.use(express.static(__dirname, '/dist/build'));
+app.use(express.static(__dirname + '/dist/build'));
 
-app.get('/', (req, res) => res.sendFile(__dirname, '/dist/index.html'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/dist/index.html'));
 
 // Defines Routes
 app.use('/api/users', require('./routes/users'));
